@@ -16,7 +16,7 @@
 
 using namespace std;
 
-const int N = 20;
+const int N = 50;
 
 struct node
 {
@@ -295,8 +295,10 @@ void menuImprimir()
         limparTela();
         cin.clear();
         cin.sync();
-        cout << "\t\t\t CONTROLE ADEGA DE VINHOS \n" << endl;
-        cout << "\t Imprimir \n\n"<< endl;
+        cout << "\t\t\t CONTROLE ADEGA DE VINHOS \n"
+             << endl;
+        cout << "\t Imprimir \n\n"
+             << endl;
         cout << " --> Quantidade de produtos: " << final + 1 << "/" << N << endl;
         cout << " Opções: [1]Tudo [2]Valor [3]Quantidade [4]Ano [0]Voltar" << endl;
         cout << " > ";
@@ -1005,7 +1007,8 @@ void ordenaValor()
     }
 }
 
-void editar(int k){
+void editar(int k)
+{
     if (k >= 0 && k <= final)
     {
         node bsc = buscaId(list[k].id);
@@ -1029,13 +1032,16 @@ void consultaId()
     limparTela();
     cin.clear();
     cin.sync();
-    cout << "\t\t\t CONTROLE ADEGA DE VINHOS \n"<< endl;
-    cout << "\t Consulta ID \n\n"<< endl;
+    cout << "\t\t\t CONTROLE ADEGA DE VINHOS \n"
+         << endl;
+    cout << "\t Consulta ID \n\n"
+         << endl;
     cout << " Insira o ID: ";
     cin >> id;
     sinal = false;
     pos = posPorId(buscaId(id).id);
-    if(sinal){
+    if (sinal)
+    {
         cout << "Posicão: " << pos << endl;
         imprimeNode(list[pos]);
         cout << " Opções: [1]Remover [2]Editar [0]Voltar" << endl;
@@ -1049,17 +1055,18 @@ void consultaId()
         case '2':
             editar(pos);
             break;
-        
+
         case '0':
             break;
-        
+
         default:
             break;
         }
-    }else{
+    }
+    else
+    {
         cout << " Não Encontrado!" << endl;
     }
-
 }
 void consultaNome()
 {
@@ -1069,13 +1076,16 @@ void consultaNome()
     limparTela();
     cin.clear();
     cin.sync();
-    cout << "\t\t\t CONTROLE ADEGA DE VINHOS \n"<< endl;
-    cout << "\t Consulta Nome \n\n"<< endl;
+    cout << "\t\t\t CONTROLE ADEGA DE VINHOS \n"
+         << endl;
+    cout << "\t Consulta Nome \n\n"
+         << endl;
     cout << " Insira o Nome: ";
     getline(cin, nome);
     sinal = false;
     pos = posPorId(buscaNome(nome).id);
-    if(sinal){
+    if (sinal)
+    {
         cout << "Posicão: " << pos << endl;
         imprimeNode(list[pos]);
         cout << " Opções: [1]Remover [2]Editar [0]Voltar" << endl;
@@ -1092,16 +1102,19 @@ void consultaNome()
 
         case '0':
             break;
-        
+
         default:
             break;
         }
-    }else{
+    }
+    else
+    {
         cout << " Não Encontrado!" << endl;
     }
 }
 
-void imprimeValor(){
+void imprimeValor()
+{
     char op;
     int qtde, i;
     float valor;
@@ -1117,8 +1130,10 @@ void imprimeValor(){
     case '1':
         i = 0;
         qtde = 0;
-        while(i <= final){
-            if(list[i].valor == valor){
+        while (i <= final)
+        {
+            if (list[i].valor == valor)
+            {
                 qtde = qtde + 1;
                 imprimeNode(list[i]);
             }
@@ -1131,8 +1146,10 @@ void imprimeValor(){
     case '2':
         i = 0;
         qtde = 0;
-        while(i <= final){
-            if(list[i].valor >= valor){
+        while (i <= final)
+        {
+            if (list[i].valor >= valor)
+            {
                 qtde = qtde + 1;
                 imprimeNode(list[i]);
             }
@@ -1145,8 +1162,10 @@ void imprimeValor(){
     case '3':
         i = 0;
         qtde = 0;
-        while(i <= final){
-            if(list[i].valor <= valor){
+        while (i <= final)
+        {
+            if (list[i].valor <= valor)
+            {
                 qtde = qtde + 1;
                 imprimeNode(list[i]);
             }
@@ -1158,13 +1177,13 @@ void imprimeValor(){
 
     case '0':
         break;
-    
+
     default:
         break;
     }
-
 }
-void imprimeQuantidade(){
+void imprimeQuantidade()
+{
     char op;
     int qtde, i;
     int quantidade;
@@ -1180,8 +1199,10 @@ void imprimeQuantidade(){
     case '1':
         i = 0;
         qtde = 0;
-        while(i <= final){
-            if(list[i].qtde == quantidade){
+        while (i <= final)
+        {
+            if (list[i].qtde == quantidade)
+            {
                 qtde = qtde + 1;
                 imprimeNode(list[i]);
             }
@@ -1194,8 +1215,10 @@ void imprimeQuantidade(){
     case '2':
         i = 0;
         qtde = 0;
-        while(i <= final){
-            if(list[i].qtde >= quantidade){
+        while (i <= final)
+        {
+            if (list[i].qtde >= quantidade)
+            {
                 qtde = qtde + 1;
                 imprimeNode(list[i]);
             }
@@ -1208,8 +1231,10 @@ void imprimeQuantidade(){
     case '3':
         i = 0;
         qtde = 0;
-        while(i <= final){
-            if(list[i].qtde <= quantidade){
+        while (i <= final)
+        {
+            if (list[i].qtde <= quantidade)
+            {
                 qtde = qtde + 1;
                 imprimeNode(list[i]);
             }
@@ -1221,12 +1246,13 @@ void imprimeQuantidade(){
 
     case '0':
         break;
-    
+
     default:
         break;
     }
 }
-void imprimeAno(){
+void imprimeAno()
+{
     char op;
     int qtde, i;
     int ano;
@@ -1242,8 +1268,10 @@ void imprimeAno(){
     case '1':
         i = 0;
         qtde = 0;
-        while(i <= final){
-            if(list[i].ano == ano){
+        while (i <= final)
+        {
+            if (list[i].ano == ano)
+            {
                 qtde = qtde + 1;
                 imprimeNode(list[i]);
             }
@@ -1256,8 +1284,10 @@ void imprimeAno(){
     case '2':
         i = 0;
         qtde = 0;
-        while(i <= final){
-            if(list[i].ano >= ano){
+        while (i <= final)
+        {
+            if (list[i].ano >= ano)
+            {
                 qtde = qtde + 1;
                 imprimeNode(list[i]);
             }
@@ -1270,8 +1300,10 @@ void imprimeAno(){
     case '3':
         i = 0;
         qtde = 0;
-        while(i <= final){
-            if(list[i].ano <= ano){
+        while (i <= final)
+        {
+            if (list[i].ano <= ano)
+            {
                 qtde = qtde + 1;
                 imprimeNode(list[i]);
             }
@@ -1283,7 +1315,7 @@ void imprimeAno(){
 
     case '0':
         break;
-    
+
     default:
         break;
     }
@@ -1372,7 +1404,8 @@ void altAnt(int id)
     }
 }
 
-void buscaValorRem(float valor){
+void buscaValorRem(float valor)
+{
     int pos = posPorId(buscaValor(valor).id);
     remPosK(pos);
 }
