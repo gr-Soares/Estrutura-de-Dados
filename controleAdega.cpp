@@ -264,10 +264,12 @@ void menuRemover()
         {
         case '1':
             remIni();
+            pause();
             break;
 
         case '2':
             remFim();
+            pause();
             break;
 
         case '3':
@@ -276,6 +278,7 @@ void menuRemover()
             cin >> pos;
             limparBuffer();
             remPosK(pos);
+            pause();
             break;
 
         case '0':
