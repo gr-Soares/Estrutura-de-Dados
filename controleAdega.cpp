@@ -1,5 +1,6 @@
 #include <iostream>
 #include <iomanip>
+#include <locale.h>
 
 #if defined(__MINGW32__) || defined(_MSC_VER)
 #define limparBuffer() fflush(stdin)
@@ -74,6 +75,7 @@ void buscaValorRem(float valor);
 
 int main()
 {
+    setlocale(LC_ALL,"");
     populate();
     menu();
 }
