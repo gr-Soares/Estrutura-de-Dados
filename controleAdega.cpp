@@ -728,6 +728,14 @@ void insFim(node novoNode)
             list[final] = novoNode;
             sinal = true;
         }
+        else
+        {
+            cout << "Dados não confirmados" << endl;
+        }
+    }
+    else
+    {
+        cout << "Lista Cheia" << endl;
     }
 }
 
@@ -748,6 +756,14 @@ void insCom(node novoNode)
             list[aux] = novoNode;
             sinal = true;
         }
+        else
+        {
+            cout << "Dados não confirmados" << endl;
+        }
+    }
+    else
+    {
+        cout << "Lista Cheia" << endl;
     }
 }
 
@@ -770,7 +786,19 @@ void insPosK(int k, node novoNode)
                 list[k] = novoNode;
                 sinal = true;
             }
+            else
+            {
+                cout << "Dados não confirmados" << endl;
+            }
         }
+        else
+        {
+            cout << "Posição Invalida" << endl;
+        }
+    }
+    else
+    {
+        cout << "Fila cheia" << endl;
     }
 }
 
@@ -790,6 +818,14 @@ void remFim()
             final = final - 1;
             sinal = true;
         }
+        else
+        {
+            cout << "Operação não confirmada" << endl;
+        }
+    }
+    else
+    {
+        cout << "Lista vazia" << endl;
     }
 }
 
@@ -815,6 +851,14 @@ void remIni()
             final = final - 1;
             sinal = true;
         }
+        else
+        {
+            cout << "Operação não confirmada" << endl;
+        }
+    }
+    else
+    {
+        cout << "Lista Vazia" << endl;
     }
 }
 
@@ -824,22 +868,33 @@ void remPosK(int k)
     conf = 'N';
     if (final >= 0)
     {
-        imprimeNode(list[k]);
-        cout << "Confirmar [N/s]: ";
-        cin >> conf;
-        limparBuffer();
-        conf = toupper(conf);
-        if (conf == 'S')
+        if (k >= 0 && k <= final)
         {
-            int aux = k;
-            while (aux != final)
+            imprimeNode(list[k]);
+            cout << "Confirmar [N/s]: ";
+            cin >> conf;
+            limparBuffer();
+            conf = toupper(conf);
+            if (conf == 'S')
             {
-                list[aux] = list[aux + 1];
-                aux = aux + 1;
+                int aux = k;
+                while (aux != final)
+                {
+                    list[aux] = list[aux + 1];
+                    aux = aux + 1;
+                }
+                final = final - 1;
+                sinal = true;
             }
-            final = final - 1;
-            sinal = true;
+            else
+            {
+                cout << "Operação não confirmada" << endl;
+            }
+        }else{
+            cout << "Posição Invalida" << endl;   
         }
+    }else{
+        cout << "Lista vazia" << endl;
     }
 }
 
