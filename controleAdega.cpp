@@ -573,7 +573,7 @@ void menuOutros()
 
         case '5':
             cout << "Insira o Valor: ";
-            cin >> k;
+            cin >> valor;
             limparBuffer();
             buscaValorRem(valor);
             pause();
